@@ -5,8 +5,7 @@ import Dropdown from './Dropdown';
 import NameInput from './NameInput';
 import backgroundImg from './background.jpg';
 import InstructionForm from './InstructionForm';
-//import InstructionList from './InstructionList';
-//import Instruction from './Instruction';
+import InstructionList from './InstructionList';
 
 function App() {
   const [burger, setBurger] = useState('single');
@@ -52,8 +51,8 @@ function App() {
       <NameInput setOrderName={setOrderName}/>
       <section className='display'>
         <OrderImages burger={burger} side={side} drink={drink}/>
-        <div>Name for order: {orderName}</div>
-        {/* <InstructionList instructions={instructionList} /> */}
+        <h2>Name for order: {orderName}</h2>
+        <InstructionList instructions={instructionList} />
       </section>
     </div>
   );
