@@ -2,11 +2,13 @@ import { useState } from 'react';
 import './App.css';
 import Display from './Display';
 import Dropdown from './Dropdown';
+import NameInput from './NameInput';
 
 function App() {
   const [burger, setBurger] = useState('single');
   const [side, setSide] = useState('side-1');
   const [drink, setDrink] = useState('drink-1');
+  const [orderName, setOrderName] = useState('');
   const burgerOptions = [{ value: 'single', display: 'Single' }, { value: 'double', display: 'Double' }, { value: 'octuple', display: 'ALL OF THE BURGER' }];
   const sideOptions = [{ value: 'side-1', display: 'Fries' }, { value: 'side-2', display: 'Tater Tots' }, { value: 'side-3', display: 'The Mozz' }];
   const drinkOptions = [{ value: 'drink-1', display: 'Small' }, { value: 'drink-2', display: 'Medium' }, { value: 'drink-3', display: 'Diabetes' }];
@@ -32,8 +34,9 @@ function App() {
         <Dropdown options={sideOptions} handleChange={handleSideChange} item={'Side'} />
         <Dropdown options={drinkOptions} handleChange={handleDrinkChange} item={'Drink'} />
       </div>
+      <NameInput setOrderName={setOrderName}/>
       <section className='display'>
-        <Display burger={burger} side={side} drink={drink} />
+        <Display burger={burger} side={side} drink={drink} orderName={orderName}/>
       </section>
     </div>
   );
