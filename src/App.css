@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -39,4 +43,16 @@
 
 .display img {
   width: 100px;
+}
+
+.dropdown {
+  margin: 5px;
+}
+
+.dropdown select {
+  margin: 5px;
+}
+
+.images {
+  margin: 5px;
 }

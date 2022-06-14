@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-import Display from './Display';
+import OrderImages from './OrderImages';
 import Dropdown from './Dropdown';
 import NameInput from './NameInput';
+import backgroundImg from './background.jpg';
 
 function App() {
   const [burger, setBurger] = useState('single');
@@ -25,7 +26,7 @@ function App() {
     setDrink(e.target.value);
   }
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${backgroundImg})` }}>
       <header>
         Welcome to the Good Burger, home of the good burger, can I take your order?
       </header>
@@ -36,7 +37,8 @@ function App() {
       </div>
       <NameInput setOrderName={setOrderName}/>
       <section className='display'>
-        <Display burger={burger} side={side} drink={drink} orderName={orderName}/>
+        <OrderImages burger={burger} side={side} drink={drink}/>
+        <div>Name for order: {orderName}</div>
       </section>
     </div>
   );
