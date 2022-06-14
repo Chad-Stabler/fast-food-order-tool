@@ -1,9 +1,11 @@
 .App {
   text-align: center;
   background-size: cover;
+  height: 57em;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
